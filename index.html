@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eve Intelligence | The Life AI</title>
+    <style>
+        /* APPLE-STYLE THEME */
+        :root {
+            --bg-body: #ffffff;
+            --bg-section: #f5f5f7;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent-color: #0071e3;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+        .nav-content {
+            max-width: 980px;
+            margin: 0 auto;
+            height: 52px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 22px;
+        }
+        .logo { font-weight: 600; font-size: 19px; text-decoration: none; color: var(--text-primary); }
+        .nav-links a { font-size: 12px; color: var(--text-secondary); text-decoration: none; margin-left: 24px; }
+        .nav-links a:hover { color: var(--text-primary); }
+
+        /* HERO SECTION */
+        header {
+            text-align: center;
+            padding: 140px 20px 100px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+        .hero-sub {
+            font-size: 24px;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 98px;
+            font-size: 17px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* FEATURES GRID */
+        .features-section { background-color: var(--bg-section); padding: 120px 20px; }
+        .grid {
+            max-width: 980px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: white;
+            padding: 45px 40px;
+            border-radius: 24px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+        }
+        .card h3 { font-size: 24px; font-weight: 600; margin-bottom: 12px; }
+        .card-icon { font-size: 36px; margin-bottom: 24px; display: block; }
+
+        /* PRIVACY POLICY SECTION */
+        .legal-section { max-width: 720px; margin: 0 auto; padding: 100px 20px; scroll-margin-top: 60px; }
+        .legal-content { border-top: 1px solid #e5e5e5; padding-top: 80px; }
+        .legal-content h2 { font-size: 40px; font-weight: 700; margin-bottom: 40px; }
+        .legal-content h4 { font-size: 21px; font-weight: 600; margin-top: 40px; margin-bottom: 12px; }
+        .legal-content p, .legal-content li { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #d2d2d7; font-size: 12px; color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">Eve Intelligence</a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#privacy_policy">Privacy Policy</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Life, <span style="color: var(--text-secondary);">Optimized.</span></h1>
+        <p class="hero-sub">The AI companion that connects your finance, health, and social worlds.</p>
+        <a href="#" class="cta-button">Coming Soon</a>
+    </header>
+
+    <section id="features" class="features-section">
+        <div class="grid">
+            <div class="card">
+                <span class="card-icon">💳</span>
+                <h3>Total Finance</h3>
+                <p>Secure integration with Klarna and banking APIs. Eve analyzes spending and subscriptions to optimize your wealth.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">📮</span>
+                <h3>Life Admin</h3>
+                <p>Connected to Kivra. Eve organizes invoices, tracks due dates, and handles paperwork automatically.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">❤️</span>
+                <h3>Health Sync</h3>
+                <p>Eve learns from Apple Health to provide proactive wellness insights and recovery suggestions.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🤝</span>
+                <h3>Social Connector</h3>
+                <p>Insights from social platforms (Tinder, Hinge) to help balance relationships and social well-being.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacy_policy" class="legal-section">
+        <div class="legal-content">
+            <h2>Privacy Policy</h2>
+            <p><strong>Effective Date: December 10, 2025</strong></p>
+            <p>At Eve Intelligence ("we," "our,"), we prioritize your privacy. This policy details how we handle data from integrations like Kivra, Banking APIs, and HealthKit.</p>
+
+            <h4>1. Data We Collect</h4>
+            <ul>
+                <li><strong>Financial:</strong> Transaction history via open banking APIs (e.g., Klarna) for budgeting.</li>
+                <li><strong>Health:</strong> Activity and sleep data via Apple HealthKit.</li>
+                <li><strong>Admin:</strong> Invoice details via Kivra.</li>
+                <li><strong>Social:</strong> Limited profile data from connected social apps.</li>
+            </ul>
+
+            <h4>2. How We Use Data</h4>
+            <p>We use data solely to provide AI insights. <strong>We do not sell data to third parties or advertisers.</strong></p>
+
+            <h4>3. HealthKit Compliance</h4>
+            <p>We do not use HealthKit data for advertising or data mining purposes other than improving health management.</p>
+
+            <h4>4. Security</h4>
+            <p>We use AES-256 encryption. Credentials are never stored on our servers.</p>
+
+            <h4>5. Contact</h4>
+            <p>Questions? Contact us at support@eveintelligence.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Eve Intelligence. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
