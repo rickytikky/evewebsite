@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eve Intelligence | Life Analysis</title>
+    <style>
+        /* APPLE-STYLE THEME */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f7;
+            --bg-tertiary: #ebebed;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent-blue: #0071e3;
+            --accent-green: #30d158;
+            --accent-orange: #ff9500;
+            --accent-pink: #ff2d55;
+            --accent-purple: #af52de;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 32px rgba(0,0,0,0.12);
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 100%);
+            color: var(--text-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* APP CONTAINER */
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        .app-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .app-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .app-header p {
+            font-size: 19px;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* FILE UPLOAD AREA */
+        .upload-section {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .upload-section.hidden {
+            display: none;
+        }
+
+        .upload-area {
+            border: 3px dashed var(--bg-tertiary);
+            border-radius: 16px;
+            padding: 60px 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+        }
+
+        .upload-area:hover {
+            border-color: var(--accent-blue);
+            background: rgba(0, 113, 227, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .upload-area.dragover {
+            border-color: var(--accent-blue);
+            background: rgba(0, 113, 227, 0.1);
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .upload-text {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .upload-subtext {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .upload-button {
+            margin-top: 24px;
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 98px;
+            font-size: 17px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .upload-button:hover {
+            background: #0051b3;
+            transform: scale(1.05);
+        }
+
+        .selected-file {
+            margin-top: 24px;
+            padding: 16px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            display: none;
+        }
+
+        .selected-file.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .file-name {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .file-size {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* ANALYSIS PROCESS */
+        .analysis-section {
+            display: none;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .analysis-section.show {
+            display: block;
+        }
+
+        .analysis-status {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid var(--bg-tertiary);
+            border-top-color: var(--accent-blue);
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        .status-text {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .status-subtext {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        /* CATEGORIES GRID */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            padding: 32px 24px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .category-card.show {
+            opacity: 1;
+            transform: translateY(0);
+            animation: slideInUp 0.5s ease-out forwards;
+        }
+
+        .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .category-card:nth-child(2) { animation-delay: 0.2s; }
+        .category-card:nth-child(3) { animation-delay: 0.3s; }
+        .category-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .category-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .category-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .category-stats {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .category-progress {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+
+        .category-progress-bar {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+
+        .finance .category-progress-bar { background: var(--accent-blue); }
+        .health .category-progress-bar { background: var(--accent-green); }
+        .social .category-progress-bar { background: var(--accent-pink); }
+        .other .category-progress-bar { background: var(--accent-purple); }
+
+        .category-items {
+            font-size: 13px;
+            color: var(--text-secondary);
+            list-style: none;
+            padding: 0;
+        }
+
+        .category-items li {
+            padding: 4px 0;
+            border-bottom: 1px solid var(--bg-tertiary);
+        }
+
+        .category-items li:last-child {
+            border-bottom: none;
+        }
+
+        /* LIFE OVERVIEW */
+        .overview-section {
+            display: none;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .overview-section.show {
+            display: block;
+        }
+
+        .overview-card {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .overview-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .overview-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .overview-insights {
+            margin-top: 32px;
+        }
+
+        .insight-item {
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .insight-title {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .insight-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 98px;
+            font-size: 17px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0051b3;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: #d2d2d7;
+            transform: scale(1.05);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .app-header h1 {
+                font-size: 36px;
+            }
+
+            .upload-section {
+                padding: 40px 24px;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .overview-card {
+                padding: 32px 24px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="app-header">
+            <h1>Eve Intelligence</h1>
+            <p>Your Life Analysis Companion</p>
+        </div>
+
+        <!-- FILE UPLOAD SECTION -->
+        <div class="upload-section" id="uploadSection">
+            <div class="upload-area" id="uploadArea">
+                <span class="upload-icon">📄</span>
+                <div class="upload-text">Add File</div>
+                <div class="upload-subtext">Drop a file here or click to browse</div>
+                <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt,.csv,.json,.xlsx">
+            </div>
+            <button class="upload-button" onclick="document.getElementById('fileInput').click()">
+                Choose File
+            </button>
+            <div class="selected-file" id="selectedFile">
+                <div class="file-name" id="fileName"></div>
+                <div class="file-size" id="fileSize"></div>
+            </div>
+        </div>
+
+        <!-- ANALYSIS PROCESS SECTION -->
+        <div class="analysis-section" id="analysisSection">
+            <div class="analysis-status">
+                <div class="spinner"></div>
+                <div class="status-text" id="statusText">Analyzing your file...</div>
+                <div class="status-subtext" id="statusSubtext">Extracting information and categorizing data</div>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card finance" id="financeCard">
+                    <span class="category-icon">💳</span>
+                    <div class="category-title">Finance</div>
+                    <div class="category-stats" id="financeStats">0 items found</div>
+                    <div class="category-progress">
+                        <div class="category-progress-bar" id="financeProgress" style="width: 0%"></div>
+                    </div>
+                    <ul class="category-items" id="financeItems"></ul>
+                </div>
+
+                <div class="category-card health" id="healthCard">
+                    <span class="category-icon">❤️</span>
+                    <div class="category-title">Health</div>
+                    <div class="category-stats" id="healthStats">0 items found</div>
+                    <div class="category-progress">
+                        <div class="category-progress-bar" id="healthProgress" style="width: 0%"></div>
+                    </div>
+                    <ul class="category-items" id="healthItems"></ul>
+                </div>
+
+                <div class="category-card social" id="socialCard">
+                    <span class="category-icon">🤝</span>
+                    <div class="category-title">Social</div>
+                    <div class="category-stats" id="socialStats">0 items found</div>
+                    <div class="category-progress">
+                        <div class="category-progress-bar" id="socialProgress" style="width: 0%"></div>
+                    </div>
+                    <ul class="category-items" id="socialItems"></ul>
+                </div>
+
+                <div class="category-card other" id="otherCard">
+                    <span class="category-icon">📋</span>
+                    <div class="category-title">Other</div>
+                    <div class="category-stats" id="otherStats">0 items found</div>
+                    <div class="category-progress">
+                        <div class="category-progress-bar" id="otherProgress" style="width: 0%"></div>
+                    </div>
+                    <ul class="category-items" id="otherItems"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIFE OVERVIEW SECTION -->
+        <div class="overview-section" id="overviewSection">
+            <div class="overview-card">
+                <h2 class="overview-title">Life Overview</h2>
+                
+                <div class="overview-stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="totalItems">0</div>
+                        <div class="stat-label">Total Items</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="categoriesFound">0</div>
+                        <div class="stat-label">Categories</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="completionScore">0%</div>
+                        <div class="stat-label">Analysis Complete</div>
+                    </div>
+                </div>
+
+                <div class="overview-insights">
+                    <div class="insight-item">
+                        <div class="insight-title">📊 Overall Diagnostic</div>
+                        <div class="insight-text" id="diagnosticText">
+                            Your file has been analyzed and cross-referenced across all life markers. 
+                            The data reveals insights into your financial patterns, health indicators, 
+                            and social connections.
+                        </div>
+                    </div>
+
+                    <div class="insight-item">
+                        <div class="insight-title">🔍 Cross Analysis</div>
+                        <div class="insight-text" id="crossAnalysisText">
+                            Patterns and correlations have been identified across different categories, 
+                            providing a comprehensive view of your life balance and optimization opportunities.
+                        </div>
+                    </div>
+
+                    <div class="insight-item">
+                        <div class="insight-title">✨ Recommendations</div>
+                        <div class="insight-text" id="recommendationsText">
+                            Based on the analysis, personalized recommendations are being generated 
+                            to help optimize your financial health, wellness, and social connections.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="resetApp()">Analyze Another File</button>
+                    <button class="btn btn-secondary" onclick="exportReport()">Export Report</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const selectedFile = document.getElementById('selectedFile');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const uploadSection = document.getElementById('uploadSection');
+        const analysisSection = document.getElementById('analysisSection');
+        const overviewSection = document.getElementById('overviewSection');
+        const statusText = document.getElementById('statusText');
+        const statusSubtext = document.getElementById('statusSubtext');
+
+        // Drag and drop handlers
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                handleFile(files[0]);
+            }
+        });
+
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            fileName.textContent = file.name;
+            fileSize.textContent = formatFileSize(file.size);
+            selectedFile.classList.add('show');
+
+            // Start analysis after a brief delay
+            setTimeout(() => {
+                startAnalysis();
+            }, 1000);
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+        }
+
+        function startAnalysis() {
+            uploadSection.classList.add('hidden');
+            analysisSection.classList.add('show');
+
+            // Simulate analysis phases
+            const phases = [
+                { text: 'Analyzing file structure...', subtext: 'Reading and parsing document contents' },
+                { text: 'Extracting data points...', subtext: 'Identifying relevant information' },
+                { text: 'Categorizing information...', subtext: 'Sorting into life markers' },
+                { text: 'Processing categories...', subtext: 'Finance, Health, Social, Other' },
+                { text: 'Generating insights...', subtext: 'Creating cross-analysis and overview' }
+            ];
+
+            let phaseIndex = 0;
+            const phaseInterval = setInterval(() => {
+                if (phaseIndex < phases.length) {
+                    statusText.textContent = phases[phaseIndex].text;
+                    statusSubtext.textContent = phases[phaseIndex].subtext;
+                    phaseIndex++;
+                } else {
+                    clearInterval(phaseInterval);
+                    setTimeout(() => {
+                        showCategories();
+                    }, 1000);
+                }
+            }, 1500);
+        }
+
+        function showCategories() {
+            // Generate mock data
+            const categories = {
+                finance: {
+                    items: ['Transaction records', 'Subscription services', 'Budget allocation', 'Investment portfolio'],
+                    percentage: 85
+                },
+                health: {
+                    items: ['Activity data', 'Sleep patterns', 'Health metrics', 'Wellness goals'],
+                    percentage: 72
+                },
+                social: {
+                    items: ['Social connections', 'Event calendar', 'Relationship insights', 'Communication patterns'],
+                    percentage: 68
+                },
+                other: {
+                    items: ['Document metadata', 'Timestamps', 'Notes and memos', 'Administrative data'],
+                    percentage: 45
+                }
+            };
+
+            // Show category cards with animation
+            Object.keys(categories).forEach((category, index) => {
+                const card = document.getElementById(`${category}Card`);
+                const stats = document.getElementById(`${category}Stats`);
+                const progress = document.getElementById(`${category}Progress`);
+                const itemsList = document.getElementById(`${category}Items`);
+                const data = categories[category];
+
+                setTimeout(() => {
+                    card.classList.add('show');
+                    stats.textContent = `${data.items.length} items found`;
+                    
+                    setTimeout(() => {
+                        progress.style.width = `${data.percentage}%`;
+                    }, 300);
+
+                    data.items.forEach(item => {
+                        const li = document.createElement('li');
+                        li.textContent = item;
+                        itemsList.appendChild(li);
+                    });
+                }, index * 200);
+            });
+
+            // Show overview after categories are displayed
+            setTimeout(() => {
+                showOverview(categories);
+            }, 2000);
+        }
+
+        function showOverview(categories) {
+            analysisSection.classList.remove('show');
+            overviewSection.classList.add('show');
+
+            // Calculate statistics
+            const totalItems = Object.values(categories).reduce((sum, cat) => sum + cat.items.length, 0);
+            const avgPercentage = Math.round(
+                Object.values(categories).reduce((sum, cat) => sum + cat.percentage, 0) / 
+                Object.keys(categories).length
+            );
+
+            // Animate stats
+            animateValue('totalItems', 0, totalItems, 1000);
+            animateValue('categoriesFound', 0, Object.keys(categories).length, 1000);
+            animateValue('completionScore', 0, avgPercentage, 1000, '%');
+
+            // Update insight texts with dynamic content
+            const diagnosticText = document.getElementById('diagnosticText');
+            diagnosticText.textContent = `Your file has been thoroughly analyzed across ${Object.keys(categories).length} life marker categories. 
+                We've identified ${totalItems} data points that provide insights into your financial patterns (${categories.finance.percentage}% complete), 
+                health indicators (${categories.health.percentage}% complete), and social connections (${categories.social.percentage}% complete).`;
+
+            const crossAnalysisText = document.getElementById('crossAnalysisText');
+            crossAnalysisText.textContent = `Cross-referencing reveals interesting patterns: your financial activity shows ${categories.finance.items.length} key areas, 
+                while health data indicates ${categories.health.items.length} wellness markers. Social connections are tracking ${categories.social.items.length} 
+                relationship insights. These correlations help provide a holistic view of your life balance.`;
+
+            const recommendationsText = document.getElementById('recommendationsText');
+            recommendationsText.textContent = `Based on the analysis, consider optimizing your ${categories.finance.percentage > 75 ? 'highly active' : 'developing'} financial profile, 
+                ${categories.health.percentage > 70 ? 'maintaining' : 'improving'} your health metrics, and 
+                ${categories.social.percentage > 65 ? 'continuing to nurture' : 'expanding'} your social connections for better life balance.`;
+        }
+
+        function animateValue(id, start, end, duration, suffix = '') {
+            const element = document.getElementById(id);
+            const range = end - start;
+            const increment = range / (duration / 16);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+                    element.textContent = end + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.round(current) + suffix;
+                }
+            }, 16);
+        }
+
+        function resetApp() {
+            uploadSection.classList.remove('hidden');
+            analysisSection.classList.remove('show');
+            overviewSection.classList.remove('show');
+            selectedFile.classList.remove('show');
+            fileInput.value = '';
+            
+            // Reset category cards
+            ['finance', 'health', 'social', 'other'].forEach(category => {
+                const card = document.getElementById(`${category}Card`);
+                const itemsList = document.getElementById(`${category}Items`);
+                const progress = document.getElementById(`${category}Progress`);
+                
+                card.classList.remove('show');
+                itemsList.innerHTML = '';
+                progress.style.width = '0%';
+            });
+        }
+
+        function exportReport() {
+            alert('Report export feature coming soon! Your analysis report will be available for download.');
+        }
+    </script>
+</body>
+</html>
+
