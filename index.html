@@ -1,184 +1,866 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eve Intelligence | The Life AI</title>
-    <style>
-        /* APPLE-STYLE THEME */
-        :root {
-            --bg-body: #ffffff;
-            --bg-section: #f5f5f7;
-            --text-primary: #1d1d1f;
-            --text-secondary: #86868b;
-            --accent-color: #0071e3;
-            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: var(--font-stack);
-            background-color: var(--bg-body);
-            color: var(--text-primary);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* NAVIGATION */
-        nav {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            z-index: 999;
-        }
-        .nav-content {
-            max-width: 980px;
-            margin: 0 auto;
-            height: 52px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 22px;
-        }
-        .logo { font-weight: 600; font-size: 19px; text-decoration: none; color: var(--text-primary); }
-        .nav-links a { font-size: 12px; color: var(--text-secondary); text-decoration: none; margin-left: 24px; }
-        .nav-links a:hover { color: var(--text-primary); }
-
-        /* HERO SECTION */
-        header {
-            text-align: center;
-            padding: 140px 20px 100px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            font-size: 64px;
-            font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-        }
-        .hero-sub {
-            font-size: 24px;
-            color: var(--text-primary);
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-        .cta-button {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 98px;
-            font-size: 17px;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* FEATURES GRID */
-        .features-section { background-color: var(--bg-section); padding: 120px 20px; }
-        .grid {
-            max-width: 980px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .card {
-            background: white;
-            padding: 45px 40px;
-            border-radius: 24px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.03);
-        }
-        .card h3 { font-size: 24px; font-weight: 600; margin-bottom: 12px; }
-        .card-icon { font-size: 36px; margin-bottom: 24px; display: block; }
-
-        /* PRIVACY POLICY SECTION */
-        .legal-section { max-width: 720px; margin: 0 auto; padding: 100px 20px; scroll-margin-top: 60px; }
-        .legal-content { border-top: 1px solid #e5e5e5; padding-top: 80px; }
-        .legal-content h2 { font-size: 40px; font-weight: 700; margin-bottom: 40px; }
-        .legal-content h4 { font-size: 21px; font-weight: 600; margin-top: 40px; margin-bottom: 12px; }
-        .legal-content p, .legal-content li { font-size: 15px; color: var(--text-secondary); margin-bottom: 16px; }
-
-        footer { text-align: center; padding: 40px; border-top: 1px solid #d2d2d7; font-size: 12px; color: var(--text-secondary); }
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.1">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #1b4275; -webkit-text-stroke: #1b4275}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #5472c0; -webkit-text-stroke: #5472c0}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #229e35; -webkit-text-stroke: #229e35}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #2b3574; -webkit-text-stroke: #2b3574}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #5472c0; -webkit-text-stroke: #5472c0; min-height: 14.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #864ea9; -webkit-text-stroke: #864ea9}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #d4ae75; -webkit-text-stroke: #d4ae75}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #1c5cff; -webkit-text-stroke: #1c5cff}
+    span.s1 {font-kerning: none; color: #5472c0; background-color: #000b13; -webkit-text-stroke: 0px #5472c0}
+    span.s2 {font-kerning: none; background-color: #000b13}
+    span.s3 {font-kerning: none; color: #d4ae75; background-color: #000b13; -webkit-text-stroke: 0px #d4ae75}
+    span.s4 {font-kerning: none; color: #1b4275; background-color: #000b13; -webkit-text-stroke: 0px #1b4275}
+    span.s5 {font-kerning: none; color: #229e35; background-color: #000b13; -webkit-text-stroke: 0px #229e35}
+    span.s6 {font-kerning: none; color: #ec65c5; background-color: #000b13; -webkit-text-stroke: 0px #ec65c5}
+    span.s7 {font-kerning: none; color: #864ea9; background-color: #000b13; -webkit-text-stroke: 0px #864ea9}
+    span.s8 {font-kerning: none}
+    span.s9 {font-kerning: none; color: #1c5cff; background-color: #000b13; -webkit-text-stroke: 0px #1c5cff}
+  </style>
 </head>
 <body>
-
-    <nav>
-        <div class="nav-content">
-            <a href="#" class="logo">Eve Intelligence</a>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#privacy_policy">Privacy Policy</a>
-            </div>
-        </div>
-    </nav>
-
-    <header>
-        <h1>Life, <span style="color: var(--text-secondary);">Optimized.</span></h1>
-        <p class="hero-sub">The AI companion that connects your finance, health, and social worlds.</p>
-        <a href="#" class="cta-button">Coming Soon</a>
-    </header>
-
-    <section id="features" class="features-section">
-        <div class="grid">
-            <div class="card">
-                <span class="card-icon">💳</span>
-                <h3>Total Finance</h3>
-                <p>Secure integration with Klarna and banking APIs. Eve analyzes spending and subscriptions to optimize your wealth.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">📮</span>
-                <h3>Life Admin</h3>
-                <p>Connected to Kivra. Eve organizes invoices, tracks due dates, and handles paperwork automatically.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">❤️</span>
-                <h3>Health Sync</h3>
-                <p>Eve learns from Apple Health to provide proactive wellness insights and recovery suggestions.</p>
-            </div>
-            <div class="card">
-                <span class="card-icon">🤝</span>
-                <h3>Social Connector</h3>
-                <p>Insights from social platforms (Tinder, Hinge) to help balance relationships and social well-being.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="privacy_policy" class="legal-section">
-        <div class="legal-content">
-            <h2>Privacy Policy</h2>
-            <p><strong>Effective Date: December 10, 2025</strong></p>
-            <p>At Eve Intelligence ("we," "our,"), we prioritize your privacy. This policy details how we handle data from integrations like Kivra, Banking APIs, and HealthKit.</p>
-
-            <h4>1. Data We Collect</h4>
-            <ul>
-                <li><strong>Financial:</strong> Transaction history via open banking APIs (e.g., Klarna) for budgeting.</li>
-                <li><strong>Health:</strong> Activity and sleep data via Apple HealthKit.</li>
-                <li><strong>Admin:</strong> Invoice details via Kivra.</li>
-                <li><strong>Social:</strong> Limited profile data from connected social apps.</li>
-            </ul>
-
-            <h4>2. How We Use Data</h4>
-            <p>We use data solely to provide AI insights. <strong>We do not sell data to third parties or advertisers.</strong></p>
-
-            <h4>3. HealthKit Compliance</h4>
-            <p>We do not use HealthKit data for advertising or data mining purposes other than improving health management.</p>
-
-            <h4>4. Security</h4>
-            <p>We use AES-256 encryption. Credentials are never stored on our servers.</p>
-
-            <h4>5. Contact</h4>
-            <p>Questions? Contact us at support@eveintelligence.com</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Eve Intelligence. All rights reserved.</p>
-    </footer>
-
+<p class="p1"><span class="s1">&lt;!</span><span class="s2">DOCTYPE</span><span class="s1"> </span><span class="s3">html</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2">&lt;</span><span class="s4">html</span><span class="s2"> </span><span class="s3">lang</span><span class="s2">=</span><span class="s5">"en"</span><span class="s2">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;</span><span class="s2">head</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s4">meta</span><span class="s2"> </span><span class="s3">charset</span><span class="s2">=</span><span class="s5">"UTF-8"</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>&lt;</span><span class="s4">meta</span><span class="s1"> </span><span class="s3">name</span><span class="s1">=</span><span class="s2">"viewport"</span><span class="s1"> </span><span class="s3">content</span><span class="s1">=</span><span class="s2">"width=device-width, initial-scale=1.0"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s4">title</span><span class="s2">&gt;Eve Intelligence | Life Analysis&lt;/</span><span class="s4">title</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s4">style</span><span class="s2">&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">/* APPLE-STYLE THEME */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">:root</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--bg-primary: </span><span class="s6">#ffffff</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--bg-secondary: </span><span class="s6">#f5f5f7</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--bg-tertiary: </span><span class="s6">#ebebed</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--text-primary: </span><span class="s6">#1d1d1f</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--text-secondary: </span><span class="s6">#86868b</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--accent-blue: </span><span class="s6">#0071e3</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--accent-green: </span><span class="s6">#30d158</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--accent-orange: </span><span class="s6">#ff9500</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--accent-pink: </span><span class="s6">#ff2d55</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--accent-purple: </span><span class="s6">#af52de</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--shadow: </span><span class="s6">0</span><span class="s2"> </span><span class="s6">4</span><span class="s4">px</span><span class="s2"> </span><span class="s6">24</span><span class="s4">px</span><span class="s2"> </span><span class="s7">rgba</span><span class="s2">(</span><span class="s6">0</span><span class="s2">,</span><span class="s6">0</span><span class="s2">,</span><span class="s6">0</span><span class="s2">,</span><span class="s6">0.08</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--shadow-hover: </span><span class="s6">0</span><span class="s2"> </span><span class="s6">8</span><span class="s4">px</span><span class="s2"> </span><span class="s6">32</span><span class="s4">px</span><span class="s2"> </span><span class="s7">rgba</span><span class="s2">(</span><span class="s6">0</span><span class="s2">,</span><span class="s6">0</span><span class="s2">,</span><span class="s6">0</span><span class="s2">,</span><span class="s6">0.12</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>--font-stack: </span><span class="s7">-apple-system</span><span class="s2">, BlinkMacSystemFont, </span><span class="s5">"Segoe UI"</span><span class="s2">, Roboto, </span><span class="s7">Helvetica</span><span class="s2">, </span><span class="s7">Arial</span><span class="s2">, </span><span class="s7">sans-serif</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">*</span><span class="s2"> {<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin</i></span><span class="s2">: </span><span class="s6">0</span><span class="s2">;<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">0</span><span class="s2">;<span class="Apple-converted-space"> </span></span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>box-sizing</i></span><span class="s1">: </span><span class="s2">border-box</span><span class="s1">;<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">body</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-family</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--font-stack);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>background</i></span><span class="s1">: </span><span class="s2">linear-gradient</span><span class="s1">(</span><span class="s6">135</span><span class="s4">deg</span><span class="s1">, </span><span class="s6">#f5f5f7</span><span class="s1"> </span><span class="s6">0</span><span class="s4">%</span><span class="s1">, </span><span class="s6">#ffffff</span><span class="s1"> </span><span class="s6">100</span><span class="s4">%</span><span class="s1">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>line-height</i></span><span class="s2">: </span><span class="s6">1.5</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>-webkit-font-smoothing</i></span><span class="s1">: </span><span class="s2">antialiased</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>min-height</i></span><span class="s2">: </span><span class="s6">100</span><span class="s4">vh</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>overflow-x</i></span><span class="s1">: </span><span class="s2">hidden</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">/* APP CONTAINER */</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.app-container</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>max-width</i></span><span class="s2">: </span><span class="s6">1200</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin</i></span><span class="s2">: </span><span class="s6">0</span><span class="s2"> </span><span class="s7">auto</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">40</span><span class="s4">px</span><span class="s2"> </span><span class="s6">20</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>min-height</i></span><span class="s2">: </span><span class="s6">100</span><span class="s4">vh</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">/* HEADER */</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.app-header</span><span class="s1"> {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>text-align</i></span><span class="s1">: </span><span class="s2">center</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">60</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>animation</i></span><span class="s2">: fadeInDown </span><span class="s6">0.6</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease-out</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.app-header</span><span class="s2"> </span><span class="s4">h1</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">48</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">700</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>letter-spacing</i></span><span class="s2">: </span><span class="s6">-1.5</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">12</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">linear-gradient</span><span class="s2">(</span><span class="s6">135</span><span class="s4">deg</span><span class="s2">, </span><span class="s7">var</span><span class="s2">(--text-primary) </span><span class="s6">0</span><span class="s4">%</span><span class="s2">, </span><span class="s7">var</span><span class="s2">(--text-secondary) </span><span class="s6">100</span><span class="s4">%</span><span class="s2">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>-webkit-background-clip</i></span><span class="s1">: </span><span class="s2">text</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>-webkit-text-fill-color</i></span><span class="s1">: </span><span class="s2">transparent</span><span class="s1">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>background-clip</i></span><span class="s1">: </span><span class="s2">text</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.app-header</span><span class="s2"> </span><span class="s4">p</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">19</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">400</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">/* FILE UPLOAD AREA */</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.upload-section</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--bg-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">20</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">60</span><span class="s4">px</span><span class="s2"> </span><span class="s6">40</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>text-align</i></span><span class="s1">: </span><span class="s2">center</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>box-shadow</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--shadow);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">40</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>transition</i></span><span class="s2">: </span><span class="s7">all</span><span class="s2"> </span><span class="s6">0.3</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>animation</i></span><span class="s2">: fadeIn </span><span class="s6">0.8</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease-out</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.upload-section.hidden</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">none</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.upload-area</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border</i></span><span class="s2">: </span><span class="s6">3</span><span class="s4">px</span><span class="s2"> </span><span class="s7">dashed</span><span class="s2"> </span><span class="s7">var</span><span class="s2">(--bg-tertiary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">16</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">60</span><span class="s4">px</span><span class="s2"> </span><span class="s6">40</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>cursor</i></span><span class="s2">: </span><span class="s7">pointer</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>transition</i></span><span class="s2">: </span><span class="s7">all</span><span class="s2"> </span><span class="s6">0.3</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--bg-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.upload-area:hover</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--accent-blue);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">rgba</span><span class="s2">(</span><span class="s6">0</span><span class="s2">, </span><span class="s6">113</span><span class="s2">, </span><span class="s6">227</span><span class="s2">, </span><span class="s6">0.05</span><span class="s2">);</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>transform</i></span><span class="s1">: </span><span class="s2">translateY</span><span class="s1">(</span><span class="s6">-2</span><span class="s4">px</span><span class="s1">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.upload-area.dragover</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--accent-blue);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">rgba</span><span class="s2">(</span><span class="s6">0</span><span class="s2">, </span><span class="s6">113</span><span class="s2">, </span><span class="s6">227</span><span class="s2">, </span><span class="s6">0.1</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">scale</span><span class="s2">(</span><span class="s6">1.02</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.upload-icon</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">64</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">20</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">block</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.upload-text</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">21</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">600</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">8</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.upload-subtext</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">15</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">#fileInput</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">none</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.upload-button</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-top</i></span><span class="s2">: </span><span class="s6">24</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--accent-blue);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">white</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border</i></span><span class="s2">: </span><span class="s7">none</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">14</span><span class="s4">px</span><span class="s2"> </span><span class="s6">32</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">98</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">17</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">500</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>cursor</i></span><span class="s2">: </span><span class="s7">pointer</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>transition</i></span><span class="s2">: </span><span class="s7">all</span><span class="s2"> </span><span class="s6">0.3</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.upload-button:hover</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s6">#0051b3</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">scale</span><span class="s2">(</span><span class="s6">1.05</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.selected-file</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-top</i></span><span class="s2">: </span><span class="s6">24</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">16</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--bg-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">12</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">none</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.selected-file.show</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">block</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>animation</i></span><span class="s2">: slideIn </span><span class="s6">0.3</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease-out</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.file-name</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">15</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">500</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">8</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.file-size</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">13</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">/* ANALYSIS PROCESS */</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.analysis-section</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">none</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>animation</i></span><span class="s2">: fadeIn </span><span class="s6">0.6</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease-out</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.analysis-section.show</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">block</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.analysis-status</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--bg-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">20</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">40</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>box-shadow</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--shadow);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">40</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>text-align</i></span><span class="s1">: </span><span class="s2">center</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.spinner</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>width</i></span><span class="s2">: </span><span class="s6">60</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>height</i></span><span class="s2">: </span><span class="s6">60</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border</i></span><span class="s2">: </span><span class="s6">4</span><span class="s4">px</span><span class="s2"> </span><span class="s7">solid</span><span class="s2"> </span><span class="s7">var</span><span class="s2">(--bg-tertiary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-top-color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--accent-blue);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">50</span><span class="s4">%</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin</i></span><span class="s2">: </span><span class="s6">0</span><span class="s2"> </span><span class="s7">auto</span><span class="s2"> </span><span class="s6">24</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>animation</i></span><span class="s1">: spin </span><span class="s6">1</span><span class="s4">s</span><span class="s1"> </span><span class="s2">linear</span><span class="s1"> </span><span class="s2">infinite</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.status-text</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">21</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">600</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">8</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.status-subtext</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">15</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">/* CATEGORIES GRID */</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.categories-grid</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">grid</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>grid-template-columns</i></span><span class="s1">: </span><span class="s2">repeat</span><span class="s1">(</span><span class="s2">auto-fit</span><span class="s1">, </span><span class="s2">minmax</span><span class="s1">(</span><span class="s6">250</span><span class="s4">px</span><span class="s1">, </span><span class="s6">1</span><span class="s4">fr</span><span class="s1">));</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>gap</i></span><span class="s2">: </span><span class="s6">24</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">40</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-card</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--bg-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">16</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">32</span><span class="s4">px</span><span class="s2"> </span><span class="s6">24</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>box-shadow</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--shadow);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>transition</i></span><span class="s2">: </span><span class="s7">all</span><span class="s2"> </span><span class="s6">0.3</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>opacity</i></span><span class="s2">: </span><span class="s6">0</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>transform</i></span><span class="s1">: </span><span class="s2">translateY</span><span class="s1">(</span><span class="s6">20</span><span class="s4">px</span><span class="s1">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-card.show</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>opacity</i></span><span class="s2">: </span><span class="s6">1</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>transform</i></span><span class="s1">: </span><span class="s2">translateY</span><span class="s1">(</span><span class="s6">0</span><span class="s1">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>animation</i></span><span class="s2">: slideInUp </span><span class="s6">0.5</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease-out</span><span class="s2"> </span><span class="s7">forwards</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-card:nth-child</span><span class="s1">(</span><span class="s6">1</span><span class="s1">) { </span><span class="s7"><i>animation-delay</i></span><span class="s1">: </span><span class="s6">0.1</span><span class="s4">s</span><span class="s1">; }</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-card:nth-child</span><span class="s1">(</span><span class="s6">2</span><span class="s1">) { </span><span class="s7"><i>animation-delay</i></span><span class="s1">: </span><span class="s6">0.2</span><span class="s4">s</span><span class="s1">; }</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-card:nth-child</span><span class="s1">(</span><span class="s6">3</span><span class="s1">) { </span><span class="s7"><i>animation-delay</i></span><span class="s1">: </span><span class="s6">0.3</span><span class="s4">s</span><span class="s1">; }</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-card:nth-child</span><span class="s1">(</span><span class="s6">4</span><span class="s1">) { </span><span class="s7"><i>animation-delay</i></span><span class="s1">: </span><span class="s6">0.4</span><span class="s4">s</span><span class="s1">; }</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-card:hover</span><span class="s1"> {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>transform</i></span><span class="s1">: </span><span class="s2">translateY</span><span class="s1">(</span><span class="s6">-4</span><span class="s4">px</span><span class="s1">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>box-shadow</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--shadow-hover);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-icon</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">48</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">16</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">block</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-title</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">24</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">600</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">12</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-stats</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">17</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">16</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-progress</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>width</i></span><span class="s2">: </span><span class="s6">100</span><span class="s4">%</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>height</i></span><span class="s2">: </span><span class="s6">8</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--bg-tertiary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">4</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>overflow</i></span><span class="s2">: </span><span class="s7">hidden</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">12</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-progress-bar</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>height</i></span><span class="s2">: </span><span class="s6">100</span><span class="s4">%</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">4</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>transition</i></span><span class="s2">: width </span><span class="s6">1</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease-out</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.finance</span><span class="s2"> </span><span class="s3">.category-progress-bar</span><span class="s2"> { </span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--accent-blue); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.health</span><span class="s2"> </span><span class="s3">.category-progress-bar</span><span class="s2"> { </span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--accent-green); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.social</span><span class="s2"> </span><span class="s3">.category-progress-bar</span><span class="s2"> { </span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--accent-pink); }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.other</span><span class="s2"> </span><span class="s3">.category-progress-bar</span><span class="s2"> { </span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--accent-purple); }</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-items</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">13</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>list-style</i></span><span class="s2">: </span><span class="s7">none</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">0</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-items</span><span class="s1"> </span><span class="s4">li</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">4</span><span class="s4">px</span><span class="s2"> </span><span class="s6">0</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-bottom</i></span><span class="s2">: </span><span class="s6">1</span><span class="s4">px</span><span class="s2"> </span><span class="s7">solid</span><span class="s2"> </span><span class="s7">var</span><span class="s2">(--bg-tertiary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.category-items</span><span class="s1"> </span><span class="s4">li</span><span class="s2">:last-child</span><span class="s1"> {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>border-bottom</i></span><span class="s1">: </span><span class="s2">none</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">/* LIFE OVERVIEW */</span></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.overview-section</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">none</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>animation</i></span><span class="s2">: fadeIn </span><span class="s6">0.6</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease-out</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.overview-section.show</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">block</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.overview-card</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--bg-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">20</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">48</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>box-shadow</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--shadow);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">40</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.overview-title</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">36</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">700</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">32</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>text-align</i></span><span class="s1">: </span><span class="s2">center</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.overview-stats</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">grid</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>grid-template-columns</i></span><span class="s1">: </span><span class="s2">repeat</span><span class="s1">(</span><span class="s2">auto-fit</span><span class="s1">, </span><span class="s2">minmax</span><span class="s1">(</span><span class="s6">200</span><span class="s4">px</span><span class="s1">, </span><span class="s6">1</span><span class="s4">fr</span><span class="s1">));</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>gap</i></span><span class="s2">: </span><span class="s6">24</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">32</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.stat-box</span><span class="s2"> {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>text-align</i></span><span class="s1">: </span><span class="s2">center</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">24</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--bg-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">12</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.stat-value</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">32</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">700</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--accent-blue);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">8</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.stat-label</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">15</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.overview-insights</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-top</i></span><span class="s2">: </span><span class="s6">32</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.insight-item</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">20</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--bg-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">12</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">16</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-left</i></span><span class="s2">: </span><span class="s6">4</span><span class="s4">px</span><span class="s2"> </span><span class="s7">solid</span><span class="s2"> </span><span class="s7">var</span><span class="s2">(--accent-blue);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.insight-title</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">17</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">600</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-bottom</i></span><span class="s2">: </span><span class="s6">8</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.insight-text</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">15</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-secondary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>line-height</i></span><span class="s2">: </span><span class="s6">1.6</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.action-buttons</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>display</i></span><span class="s2">: </span><span class="s7">flex</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>gap</i></span><span class="s2">: </span><span class="s6">16</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2"><i>justify-content</i></span><span class="s1">: </span><span class="s2">center</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>margin-top</i></span><span class="s2">: </span><span class="s6">32</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s3">.btn</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">14</span><span class="s4">px</span><span class="s2"> </span><span class="s6">32</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border-radius</i></span><span class="s2">: </span><span class="s6">98</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">17</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>font-weight</i></span><span class="s2">: </span><span class="s6">500</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>border</i></span><span class="s2">: </span><span class="s7">none</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>cursor</i></span><span class="s2">: </span><span class="s7">pointer</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>transition</i></span><span class="s2">: </span><span class="s7">all</span><span class="s2"> </span><span class="s6">0.3</span><span class="s4">s</span><span class="s2"> </span><span class="s7">ease</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.btn-primary</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--accent-blue);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">white</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.btn-primary:hover</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s6">#0051b3</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">scale</span><span class="s2">(</span><span class="s6">1.05</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.btn-secondary</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--bg-tertiary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>color</i></span><span class="s2">: </span><span class="s7">var</span><span class="s2">(--text-primary);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">.btn-secondary:hover</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>background</i></span><span class="s2">: </span><span class="s6">#d2d2d7</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">scale</span><span class="s2">(</span><span class="s6">1.05</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">/* ANIMATIONS */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">@keyframes</span><span class="s2"> </span><span class="s9"><i>fadeIn</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>from {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>opacity</i></span><span class="s2">: </span><span class="s6">0</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>to {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>opacity</i></span><span class="s2">: </span><span class="s6">1</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">@keyframes</span><span class="s2"> </span><span class="s9"><i>fadeInDown</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>from {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>opacity</i></span><span class="s2">: </span><span class="s6">0</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">translateY</span><span class="s2">(</span><span class="s6">-20</span><span class="s4">px</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>to {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>opacity</i></span><span class="s2">: </span><span class="s6">1</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">translateY</span><span class="s2">(</span><span class="s6">0</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">@keyframes</span><span class="s2"> </span><span class="s9"><i>slideIn</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>from {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>opacity</i></span><span class="s2">: </span><span class="s6">0</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">translateX</span><span class="s2">(</span><span class="s6">-20</span><span class="s4">px</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>to {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>opacity</i></span><span class="s2">: </span><span class="s6">1</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">translateX</span><span class="s2">(</span><span class="s6">0</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">@keyframes</span><span class="s2"> </span><span class="s9"><i>slideInUp</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>from {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>opacity</i></span><span class="s2">: </span><span class="s6">0</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">translateY</span><span class="s2">(</span><span class="s6">20</span><span class="s4">px</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>to {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>opacity</i></span><span class="s2">: </span><span class="s6">1</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">translateY</span><span class="s2">(</span><span class="s6">0</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">@keyframes</span><span class="s2"> </span><span class="s9"><i>spin</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>to {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>transform</i></span><span class="s2">: </span><span class="s7">rotate</span><span class="s2">(</span><span class="s6">360</span><span class="s4">deg</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">/* RESPONSIVE */</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s4">@media</span><span class="s2"> (</span><span class="s7"><i>max-width</i></span><span class="s2">: </span><span class="s6">768</span><span class="s4">px</span><span class="s2">) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">.app-header</span><span class="s2"> </span><span class="s4">h1</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>font-size</i></span><span class="s2">: </span><span class="s6">36</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">.upload-section</span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">40</span><span class="s4">px</span><span class="s2"> </span><span class="s6">24</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">.categories-grid</span><span class="s1"> {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2"><i>grid-template-columns</i></span><span class="s1">: </span><span class="s6">1</span><span class="s4">fr</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">.overview-card</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>padding</i></span><span class="s2">: </span><span class="s6">32</span><span class="s4">px</span><span class="s2"> </span><span class="s6">24</span><span class="s4">px</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">.action-buttons</span><span class="s1"> {</span></p>
+<p class="p6"><span class="s1"><span class="Apple-converted-space">                </span></span><span class="s2"><i>flex-direction</i></span><span class="s1">: </span><span class="s2">column</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/</span><span class="s4">style</span><span class="s2">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/</span><span class="s2">head</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;</span><span class="s2">body</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">    </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"app-container"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"app-header"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s4">h1</span><span class="s2">&gt;Eve Intelligence&lt;/</span><span class="s4">h1</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s4">p</span><span class="s2">&gt;Your Life Analysis Companion&lt;/</span><span class="s4">p</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">&lt;!-- FILE UPLOAD SECTION --&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"upload-section"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"uploadSection"</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"upload-area"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"uploadArea"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"upload-icon"</span><span class="s2">&gt;📄&lt;/</span><span class="s4">span</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"upload-text"</span><span class="s2">&gt;Add File&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"upload-subtext"</span><span class="s2">&gt;Drop a file here or click to browse&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">input</span><span class="s1"> </span><span class="s3">type</span><span class="s1">=</span><span class="s2">"file"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"fileInput"</span><span class="s1"> </span><span class="s3">accept</span><span class="s1">=</span><span class="s2">".pdf,.doc,.docx,.txt,.csv,.json,.xlsx"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;</span><span class="s4">button</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"upload-button"</span><span class="s1"> </span><span class="s3">onclick</span><span class="s1">=</span><span class="s2">"document.</span><span class="s3">getElementById</span><span class="s2">('fileInput').</span><span class="s3">click</span><span class="s2">()"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>Choose File</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s4">button</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"selected-file"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"selectedFile"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"file-name"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"fileName"</span><span class="s2">&gt;&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"file-size"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"fileSize"</span><span class="s2">&gt;&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">&lt;!-- ANALYSIS PROCESS SECTION --&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"analysis-section"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"analysisSection"</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"analysis-status"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"spinner"</span><span class="s2">&gt;&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"status-text"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"statusText"</span><span class="s2">&gt;Analyzing your file...&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"status-subtext"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"statusSubtext"</span><span class="s2">&gt;Extracting information and categorizing data&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"categories-grid"</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"category-card finance"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"financeCard"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-icon"</span><span class="s2">&gt;💳&lt;/</span><span class="s4">span</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-title"</span><span class="s2">&gt;Finance&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-stats"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"financeStats"</span><span class="s2">&gt;0 items found&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-progress"</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"category-progress-bar"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"financeProgress"</span><span class="s1"> </span><span class="s3">style</span><span class="s1">=</span><span class="s2">"width: 0%"</span><span class="s1">&gt;&lt;/</span><span class="s4">div</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">ul</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"category-items"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"financeItems"</span><span class="s1">&gt;&lt;/</span><span class="s4">ul</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"category-card health"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"healthCard"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-icon"</span><span class="s2">&gt;❤️&lt;/</span><span class="s4">span</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-title"</span><span class="s2">&gt;Health&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-stats"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"healthStats"</span><span class="s2">&gt;0 items found&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-progress"</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"category-progress-bar"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"healthProgress"</span><span class="s1"> </span><span class="s3">style</span><span class="s1">=</span><span class="s2">"width: 0%"</span><span class="s1">&gt;&lt;/</span><span class="s4">div</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">ul</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-items"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"healthItems"</span><span class="s2">&gt;&lt;/</span><span class="s4">ul</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"category-card social"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"socialCard"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-icon"</span><span class="s2">&gt;🤝&lt;/</span><span class="s4">span</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-title"</span><span class="s2">&gt;Social&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-stats"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"socialStats"</span><span class="s2">&gt;0 items found&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-progress"</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"category-progress-bar"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"socialProgress"</span><span class="s1"> </span><span class="s3">style</span><span class="s1">=</span><span class="s2">"width: 0%"</span><span class="s1">&gt;&lt;/</span><span class="s4">div</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">ul</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-items"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"socialItems"</span><span class="s2">&gt;&lt;/</span><span class="s4">ul</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"category-card other"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"otherCard"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">span</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-icon"</span><span class="s2">&gt;📋&lt;/</span><span class="s4">span</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-title"</span><span class="s2">&gt;Other&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-stats"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"otherStats"</span><span class="s2">&gt;0 items found&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-progress"</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"category-progress-bar"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"otherProgress"</span><span class="s1"> </span><span class="s3">style</span><span class="s1">=</span><span class="s2">"width: 0%"</span><span class="s1">&gt;&lt;/</span><span class="s4">div</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">ul</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"category-items"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"otherItems"</span><span class="s2">&gt;&lt;/</span><span class="s4">ul</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">&lt;!-- LIFE OVERVIEW SECTION --&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">        </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"overview-section"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"overviewSection"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"overview-card"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">h2</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"overview-title"</span><span class="s2">&gt;Life Overview&lt;/</span><span class="s4">h2</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s2"><span class="Apple-converted-space">                </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"overview-stats"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"stat-box"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"stat-value"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"totalItems"</span><span class="s2">&gt;0&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"stat-label"</span><span class="s2">&gt;Total Items&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"stat-box"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"stat-value"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"categoriesFound"</span><span class="s2">&gt;0&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"stat-label"</span><span class="s2">&gt;Categories&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"stat-box"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"stat-value"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"completionScore"</span><span class="s2">&gt;0%&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"stat-label"</span><span class="s2">&gt;Analysis Complete&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"overview-insights"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"insight-item"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"insight-title"</span><span class="s2">&gt;📊 Overall Diagnostic&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"insight-text"</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s5">"diagnosticText"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span>Your file has been analyzed and cross-referenced across all life markers.<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span>The data reveals insights into your financial patterns, health indicators,<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span>and social connections.</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"insight-item"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"insight-title"</span><span class="s2">&gt;🔍 Cross Analysis&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"insight-text"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"crossAnalysisText"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span>Patterns and correlations have been identified across different categories,<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span>providing a comprehensive view of your life balance and optimization opportunities.</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"insight-item"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"insight-title"</span><span class="s2">&gt;✨ Recommendations&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s3">class</span><span class="s1">=</span><span class="s2">"insight-text"</span><span class="s1"> </span><span class="s3">id</span><span class="s1">=</span><span class="s2">"recommendationsText"</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span>Based on the analysis, personalized recommendations are being generated<span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                            </span>to help optimize your financial health, wellness, and social connections.</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;</span><span class="s4">div</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"action-buttons"</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">button</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"btn btn-primary"</span><span class="s2"> </span><span class="s3">onclick</span><span class="s2">=</span><span class="s5">"</span><span class="s3">resetApp</span><span class="s5">()"</span><span class="s2">&gt;Analyze Another File&lt;/</span><span class="s4">button</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>&lt;</span><span class="s4">button</span><span class="s2"> </span><span class="s3">class</span><span class="s2">=</span><span class="s5">"btn btn-secondary"</span><span class="s2"> </span><span class="s3">onclick</span><span class="s2">=</span><span class="s5">"</span><span class="s3">exportReport</span><span class="s5">()"</span><span class="s2">&gt;Export Report&lt;/</span><span class="s4">button</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/</span><span class="s4">div</span><span class="s2">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s4">script</span><span class="s2">&gt;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>const</i></span><span class="s2"> uploadArea </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'uploadArea'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>const</i></span><span class="s2"> fileInput </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'fileInput'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>const</i></span><span class="s2"> selectedFile </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'selectedFile'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>const</i></span><span class="s2"> fileName </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'fileName'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>const</i></span><span class="s2"> fileSize </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'fileSize'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>const</i></span><span class="s2"> uploadSection </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'uploadSection'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>const</i></span><span class="s2"> analysisSection </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'analysisSection'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>const</i></span><span class="s2"> overviewSection </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'overviewSection'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>const</i></span><span class="s2"> statusText </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'statusText'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>const</i></span><span class="s2"> statusSubtext </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'statusSubtext'</span><span class="s2">);</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">// Drag and drop handlers</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>uploadArea.</span><span class="s3">addEventListener</span><span class="s2">(</span><span class="s5">'dragover'</span><span class="s2">, (</span><span class="s9"><i>e</i></span><span class="s2">) </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s9"><i>e</i></span><span class="s2">.</span><span class="s3">preventDefault</span><span class="s2">();</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>uploadArea.classList.</span><span class="s3">add</span><span class="s2">(</span><span class="s5">'dragover'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>uploadArea.</span><span class="s3">addEventListener</span><span class="s2">(</span><span class="s5">'dragleave'</span><span class="s2">, () </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>uploadArea.classList.</span><span class="s3">remove</span><span class="s2">(</span><span class="s5">'dragover'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>uploadArea.</span><span class="s3">addEventListener</span><span class="s2">(</span><span class="s5">'drop'</span><span class="s2">, (</span><span class="s9"><i>e</i></span><span class="s2">) </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s9"><i>e</i></span><span class="s2">.</span><span class="s3">preventDefault</span><span class="s2">();</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>uploadArea.classList.</span><span class="s3">remove</span><span class="s2">(</span><span class="s5">'dragover'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> files </span><span class="s4">=</span><span class="s2"> </span><span class="s9"><i>e</i></span><span class="s2">.</span><span class="s7">dataTransfer</span><span class="s2">.</span><span class="s7">files</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s2"> (files.</span><span class="s7">length</span><span class="s2"> </span><span class="s4">&gt;</span><span class="s2"> </span><span class="s6">0</span><span class="s2">) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">handleFile</span><span class="s2">(files[</span><span class="s6">0</span><span class="s2">]);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>uploadArea.</span><span class="s3">addEventListener</span><span class="s2">(</span><span class="s5">'click'</span><span class="s2">, () </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>fileInput.</span><span class="s3">click</span><span class="s2">();</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>fileInput.</span><span class="s3">addEventListener</span><span class="s2">(</span><span class="s5">'change'</span><span class="s2">, (</span><span class="s9"><i>e</i></span><span class="s2">) </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s2"> (</span><span class="s9"><i>e</i></span><span class="s2">.</span><span class="s7">target</span><span class="s2">.files.length </span><span class="s4">&gt;</span><span class="s2"> </span><span class="s6">0</span><span class="s2">) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">handleFile</span><span class="s2">(</span><span class="s9"><i>e</i></span><span class="s2">.</span><span class="s7">target</span><span class="s2">.files[</span><span class="s6">0</span><span class="s2">]);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>function</i></span><span class="s2"> </span><span class="s3">handleFile</span><span class="s2">(</span><span class="s9"><i>file</i></span><span class="s2">) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>fileName.textContent </span><span class="s4">=</span><span class="s2"> </span><span class="s9"><i>file</i></span><span class="s2">.name;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>fileSize.textContent </span><span class="s4">=</span><span class="s2"> </span><span class="s3">formatFileSize</span><span class="s2">(</span><span class="s9"><i>file</i></span><span class="s2">.size);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>selectedFile.classList.</span><span class="s3">add</span><span class="s2">(</span><span class="s5">'show'</span><span class="s2">);</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">// Start analysis after a brief delay</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">setTimeout</span><span class="s2">(() </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">startAnalysis</span><span class="s2">();</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}, </span><span class="s6">1000</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7"><i>function</i></span><span class="s1"> </span><span class="s2">formatFileSize</span><span class="s1">(</span><span class="s9"><i>bytes</i></span><span class="s1">) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">if</span><span class="s2"> (</span><span class="s9"><i>bytes</i></span><span class="s2"> </span><span class="s4">===</span><span class="s2"> </span><span class="s6">0</span><span class="s2">) </span><span class="s4">return</span><span class="s2"> </span><span class="s5">'0 Bytes'</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> k </span><span class="s4">=</span><span class="s2"> </span><span class="s6">1024</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> sizes </span><span class="s4">=</span><span class="s2"> [</span><span class="s5">'Bytes'</span><span class="s2">, </span><span class="s5">'KB'</span><span class="s2">, </span><span class="s5">'MB'</span><span class="s2">, </span><span class="s5">'GB'</span><span class="s2">];</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> i </span><span class="s4">=</span><span class="s2"> Math.</span><span class="s3">floor</span><span class="s2">(Math.</span><span class="s3">log</span><span class="s2">(</span><span class="s9"><i>bytes</i></span><span class="s2">) </span><span class="s4">/</span><span class="s2"> Math.</span><span class="s3">log</span><span class="s2">(k));</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s4">return</span><span class="s2"> Math.</span><span class="s3">round</span><span class="s2">(</span><span class="s9"><i>bytes</i></span><span class="s2"> </span><span class="s4">/</span><span class="s2"> Math.</span><span class="s3">pow</span><span class="s2">(k, i) </span><span class="s4">*</span><span class="s2"> </span><span class="s6">100</span><span class="s2">) </span><span class="s4">/</span><span class="s2"> </span><span class="s6">100</span><span class="s2"> </span><span class="s4">+</span><span class="s2"> </span><span class="s5">' '</span><span class="s2"> </span><span class="s4">+</span><span class="s2"> sizes[i];</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>function</i></span><span class="s2"> </span><span class="s3">startAnalysis</span><span class="s2">() {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>uploadSection.classList.</span><span class="s3">add</span><span class="s2">(</span><span class="s5">'hidden'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>analysisSection.classList.</span><span class="s3">add</span><span class="s2">(</span><span class="s5">'show'</span><span class="s2">);</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">// Simulate analysis phases</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> phases </span><span class="s4">=</span><span class="s2"> [</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>{ text: </span><span class="s2">'Analyzing file structure...'</span><span class="s1">, subtext: </span><span class="s2">'Reading and parsing document contents'</span><span class="s1"> },</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>{ text: </span><span class="s2">'Extracting data points...'</span><span class="s1">, subtext: </span><span class="s2">'Identifying relevant information'</span><span class="s1"> },</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>{ text: </span><span class="s2">'Categorizing information...'</span><span class="s1">, subtext: </span><span class="s2">'Sorting into life markers'</span><span class="s1"> },</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>{ text: </span><span class="s2">'Processing categories...'</span><span class="s1">, subtext: </span><span class="s2">'Finance, Health, Social, Other'</span><span class="s1"> },</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                </span>{ text: </span><span class="s2">'Generating insights...'</span><span class="s1">, subtext: </span><span class="s2">'Creating cross-analysis and overview'</span><span class="s1"> }</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>];</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>let</i></span><span class="s2"> phaseIndex </span><span class="s4">=</span><span class="s2"> </span><span class="s6">0</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> phaseInterval </span><span class="s4">=</span><span class="s2"> </span><span class="s7">setInterval</span><span class="s2">(() </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s4">if</span><span class="s2"> (phaseIndex </span><span class="s4">&lt;</span><span class="s2"> phases.length) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>statusText.textContent </span><span class="s4">=</span><span class="s2"> phases[phaseIndex].text;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>statusSubtext.textContent </span><span class="s4">=</span><span class="s2"> phases[phaseIndex].subtext;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>phaseIndex</span><span class="s4">++</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>} </span><span class="s4">else</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s7">clearInterval</span><span class="s2">(phaseInterval);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s7">setTimeout</span><span class="s2">(() </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span><span class="s3">showCategories</span><span class="s2">();</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>}, </span><span class="s6">1000</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}, </span><span class="s6">1500</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p7"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7"><i>function</i></span><span class="s1"> </span><span class="s2">showCategories</span><span class="s1">() {</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">// Generate mock data</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> categories </span><span class="s4">=</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>finance: {</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>items: [</span><span class="s2">'Transaction records'</span><span class="s1">, </span><span class="s2">'Subscription services'</span><span class="s1">, </span><span class="s2">'Budget allocation'</span><span class="s1">, </span><span class="s2">'Investment portfolio'</span><span class="s1">],</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>percentage: </span><span class="s6">85</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>},</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>health: {</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>items: [</span><span class="s2">'Activity data'</span><span class="s1">, </span><span class="s2">'Sleep patterns'</span><span class="s1">, </span><span class="s2">'Health metrics'</span><span class="s1">, </span><span class="s2">'Wellness goals'</span><span class="s1">],</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>percentage: </span><span class="s6">72</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>},</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>social: {</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>items: [</span><span class="s2">'Social connections'</span><span class="s1">, </span><span class="s2">'Event calendar'</span><span class="s1">, </span><span class="s2">'Relationship insights'</span><span class="s1">, </span><span class="s2">'Communication patterns'</span><span class="s1">],</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>percentage: </span><span class="s6">68</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>},</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>other: {</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">                    </span>items: [</span><span class="s2">'Document metadata'</span><span class="s1">, </span><span class="s2">'Timestamps'</span><span class="s1">, </span><span class="s2">'Notes and memos'</span><span class="s1">, </span><span class="s2">'Administrative data'</span><span class="s1">],</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>percentage: </span><span class="s6">45</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>};</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">// Show category cards with animation</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>Object</i></span><span class="s2">.</span><span class="s3">keys</span><span class="s2">(categories).</span><span class="s3">forEach</span><span class="s2">((</span><span class="s9"><i>category</i></span><span class="s2">, </span><span class="s9"><i>index</i></span><span class="s2">) </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>const</i></span><span class="s2"> card </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">`${</span><span class="s9"><i>category</i></span><span class="s5">}Card`</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>const</i></span><span class="s2"> stats </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">`${</span><span class="s9"><i>category</i></span><span class="s5">}Stats`</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>const</i></span><span class="s2"> progress </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">`${</span><span class="s9"><i>category</i></span><span class="s5">}Progress`</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>const</i></span><span class="s2"> itemsList </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">`${</span><span class="s9"><i>category</i></span><span class="s5">}Items`</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>const</i></span><span class="s2"> data </span><span class="s4">=</span><span class="s2"> categories[</span><span class="s9"><i>category</i></span><span class="s2">];</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7">setTimeout</span><span class="s2">(() </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>card.classList.</span><span class="s3">add</span><span class="s2">(</span><span class="s5">'show'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>stats.textContent </span><span class="s4">=</span><span class="s2"> </span><span class="s5">`${</span><span class="s2">data.items.length</span><span class="s5">} items found`</span><span class="s2">;</span></p>
+<p class="p5"><span class="s2"><span class="Apple-converted-space">                    </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s7">setTimeout</span><span class="s2">(() </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>progress.style.width </span><span class="s4">=</span><span class="s2"> </span><span class="s5">`${</span><span class="s2">data.percentage</span><span class="s5">}%`</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>}, </span><span class="s6">300</span><span class="s2">);</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>data.items.</span><span class="s3">forEach</span><span class="s2">(</span><span class="s9"><i>item</i></span><span class="s2"> </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span></span><span class="s7"><i>const</i></span><span class="s2"> li </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">createElement</span><span class="s2">(</span><span class="s5">'li'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>li.textContent </span><span class="s4">=</span><span class="s2"> </span><span class="s9"><i>item</i></span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                        </span>itemsList.</span><span class="s3">appendChild</span><span class="s2">(li);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>});</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>}, </span><span class="s9"><i>index</i></span><span class="s2"> </span><span class="s4">*</span><span class="s2"> </span><span class="s6">200</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">// Show overview after categories are displayed</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7">setTimeout</span><span class="s2">(() </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s3">showOverview</span><span class="s2">(categories);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}, </span><span class="s6">2000</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>function</i></span><span class="s2"> </span><span class="s3">showOverview</span><span class="s2">(</span><span class="s9"><i>categories</i></span><span class="s2">) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>analysisSection.classList.</span><span class="s3">remove</span><span class="s2">(</span><span class="s5">'show'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>overviewSection.classList.</span><span class="s3">add</span><span class="s2">(</span><span class="s5">'show'</span><span class="s2">);</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">// Calculate statistics</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> totalItems </span><span class="s4">=</span><span class="s2"> </span><span class="s7"><i>Object</i></span><span class="s2">.</span><span class="s3">values</span><span class="s2">(</span><span class="s9"><i>categories</i></span><span class="s2">).</span><span class="s3">reduce</span><span class="s2">((</span><span class="s9"><i>sum</i></span><span class="s2">, </span><span class="s9"><i>cat</i></span><span class="s2">) </span><span class="s7"><i>=&gt;</i></span><span class="s2"> </span><span class="s9"><i>sum</i></span><span class="s2"> </span><span class="s4">+</span><span class="s2"> </span><span class="s9"><i>cat</i></span><span class="s2">.items.length, </span><span class="s6">0</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> avgPercentage </span><span class="s4">=</span><span class="s2"> Math.</span><span class="s3">round</span><span class="s2">(</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>Object</i></span><span class="s2">.</span><span class="s3">values</span><span class="s2">(</span><span class="s9"><i>categories</i></span><span class="s2">).</span><span class="s3">reduce</span><span class="s2">((</span><span class="s9"><i>sum</i></span><span class="s2">, </span><span class="s9"><i>cat</i></span><span class="s2">) </span><span class="s7"><i>=&gt;</i></span><span class="s2"> </span><span class="s9"><i>sum</i></span><span class="s2"> </span><span class="s4">+</span><span class="s2"> </span><span class="s9"><i>cat</i></span><span class="s2">.percentage, </span><span class="s6">0</span><span class="s2">) </span><span class="s4">/</span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>Object</i></span><span class="s2">.</span><span class="s3">keys</span><span class="s2">(</span><span class="s9"><i>categories</i></span><span class="s2">).length</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>);</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">// Animate stats</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">animateValue</span><span class="s2">(</span><span class="s5">'totalItems'</span><span class="s2">, </span><span class="s6">0</span><span class="s2">, totalItems, </span><span class="s6">1000</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">animateValue</span><span class="s2">(</span><span class="s5">'categoriesFound'</span><span class="s2">, </span><span class="s6">0</span><span class="s2">, </span><span class="s7"><i>Object</i></span><span class="s2">.</span><span class="s3">keys</span><span class="s2">(</span><span class="s9"><i>categories</i></span><span class="s2">).length, </span><span class="s6">1000</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s3">animateValue</span><span class="s2">(</span><span class="s5">'completionScore'</span><span class="s2">, </span><span class="s6">0</span><span class="s2">, avgPercentage, </span><span class="s6">1000</span><span class="s2">, </span><span class="s5">'%'</span><span class="s2">);</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">// Update insight texts with dynamic content</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> diagnosticText </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'diagnosticText'</span><span class="s2">);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>diagnosticText.textContent </span><span class="s4">=</span><span class="s1"> </span><span class="s2">`Your file has been thoroughly analyzed across ${</span><span class="s7"><i>Object</i></span><span class="s1">.</span><span class="s3">keys</span><span class="s1">(</span><span class="s9"><i>categories</i></span><span class="s1">).length</span><span class="s2">} life marker categories.<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>We've identified ${</span><span class="s1">totalItems</span><span class="s2">} data points that provide insights into your financial patterns (${</span><span class="s9"><i>categories</i></span><span class="s1">.finance.percentage</span><span class="s2">}% complete),<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>health indicators (${</span><span class="s9"><i>categories</i></span><span class="s1">.health.percentage</span><span class="s2">}% complete), and social connections (${</span><span class="s9"><i>categories</i></span><span class="s1">.social.percentage</span><span class="s2">}% complete).`</span><span class="s1">;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> crossAnalysisText </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'crossAnalysisText'</span><span class="s2">);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>crossAnalysisText.textContent </span><span class="s4">=</span><span class="s1"> </span><span class="s2">`Cross-referencing reveals interesting patterns: your financial activity shows ${</span><span class="s9"><i>categories</i></span><span class="s1">.finance.items.length</span><span class="s2">} key areas,<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>while health data indicates ${</span><span class="s9"><i>categories</i></span><span class="s1">.health.items.length</span><span class="s2">} wellness markers. Social connections are tracking ${</span><span class="s9"><i>categories</i></span><span class="s1">.social.items.length</span><span class="s2">}<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>relationship insights. These correlations help provide a holistic view of your life balance.`</span><span class="s1">;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> recommendationsText </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">'recommendationsText'</span><span class="s2">);</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>recommendationsText.textContent </span><span class="s4">=</span><span class="s1"> </span><span class="s2">`Based on the analysis, consider optimizing your ${</span><span class="s9"><i>categories</i></span><span class="s1">.finance.percentage </span><span class="s4">&gt;</span><span class="s1"> </span><span class="s6">75</span><span class="s1"> </span><span class="s4">?</span><span class="s1"> </span><span class="s2">'highly active'</span><span class="s1"> </span><span class="s4">:</span><span class="s1"> </span><span class="s2">'developing'} financial profile,<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>${</span><span class="s9"><i>categories</i></span><span class="s1">.health.percentage </span><span class="s4">&gt;</span><span class="s1"> </span><span class="s6">70</span><span class="s1"> </span><span class="s4">?</span><span class="s1"> </span><span class="s2">'maintaining'</span><span class="s1"> </span><span class="s4">:</span><span class="s1"> </span><span class="s2">'improving'} your health metrics, and<span class="Apple-converted-space"> </span></span></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">                </span>${</span><span class="s9"><i>categories</i></span><span class="s1">.social.percentage </span><span class="s4">&gt;</span><span class="s1"> </span><span class="s6">65</span><span class="s1"> </span><span class="s4">?</span><span class="s1"> </span><span class="s2">'continuing to nurture'</span><span class="s1"> </span><span class="s4">:</span><span class="s1"> </span><span class="s2">'expanding'} your social connections for better life balance.`</span><span class="s1">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p8"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s7"><i>function</i></span><span class="s1"> </span><span class="s3">animateValue</span><span class="s1">(</span><span class="s2"><i>id</i></span><span class="s1">, </span><span class="s2"><i>start</i></span><span class="s1">, </span><span class="s2"><i>end</i></span><span class="s1">, </span><span class="s2"><i>duration</i></span><span class="s1">, </span><span class="s2"><i>suffix</i></span><span class="s1"> </span><span class="s4">=</span><span class="s1"> </span><span class="s5">''</span><span class="s1">) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> element </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s9"><i>id</i></span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> range </span><span class="s4">=</span><span class="s2"> </span><span class="s9"><i>end</i></span><span class="s2"> </span><span class="s4">-</span><span class="s2"> </span><span class="s9"><i>start</i></span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> increment </span><span class="s4">=</span><span class="s2"> range </span><span class="s4">/</span><span class="s2"> (</span><span class="s9"><i>duration</i></span><span class="s2"> </span><span class="s4">/</span><span class="s2"> </span><span class="s6">16</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>let</i></span><span class="s2"> current </span><span class="s4">=</span><span class="s2"> </span><span class="s9"><i>start</i></span><span class="s2">;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span></span><span class="s7"><i>const</i></span><span class="s2"> timer </span><span class="s4">=</span><span class="s2"> </span><span class="s7">setInterval</span><span class="s2">(() </span><span class="s7"><i>=&gt;</i></span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>current </span><span class="s4">+=</span><span class="s2"> increment;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s4">if</span><span class="s2"> ((increment </span><span class="s4">&gt;</span><span class="s2"> </span><span class="s6">0</span><span class="s2"> </span><span class="s4">&amp;&amp;</span><span class="s2"> current </span><span class="s4">&gt;=</span><span class="s2"> </span><span class="s9"><i>end</i></span><span class="s2">) </span><span class="s4">||</span><span class="s2"> (increment </span><span class="s4">&lt;</span><span class="s2"> </span><span class="s6">0</span><span class="s2"> </span><span class="s4">&amp;&amp;</span><span class="s2"> current </span><span class="s4">&lt;=</span><span class="s2"> </span><span class="s9"><i>end</i></span><span class="s2">)) {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>element.textContent </span><span class="s4">=</span><span class="s2"> </span><span class="s9"><i>end</i></span><span class="s2"> </span><span class="s4">+</span><span class="s2"> </span><span class="s9"><i>suffix</i></span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span></span><span class="s7">clearInterval</span><span class="s2">(timer);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>} </span><span class="s4">else</span><span class="s2"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                    </span>element.textContent </span><span class="s4">=</span><span class="s2"> Math.</span><span class="s3">round</span><span class="s2">(current) </span><span class="s4">+</span><span class="s2"> </span><span class="s9"><i>suffix</i></span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>}, </span><span class="s6">16</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>function</i></span><span class="s2"> </span><span class="s3">resetApp</span><span class="s2">() {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>uploadSection.classList.</span><span class="s3">remove</span><span class="s2">(</span><span class="s5">'hidden'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>analysisSection.classList.</span><span class="s3">remove</span><span class="s2">(</span><span class="s5">'show'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>overviewSection.classList.</span><span class="s3">remove</span><span class="s2">(</span><span class="s5">'show'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>selectedFile.classList.</span><span class="s3">remove</span><span class="s2">(</span><span class="s5">'show'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>fileInput.value </span><span class="s4">=</span><span class="s2"> </span><span class="s5">''</span><span class="s2">;</span></p>
+<p class="p5"><span class="s2"><span class="Apple-converted-space">            </span></span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s2">// Reset category cards</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span>[</span><span class="s2">'finance'</span><span class="s1">, </span><span class="s2">'health'</span><span class="s1">, </span><span class="s2">'social'</span><span class="s1">, </span><span class="s2">'other'</span><span class="s1">].</span><span class="s3">forEach</span><span class="s1">(</span><span class="s9"><i>category</i></span><span class="s1"> </span><span class="s7"><i>=&gt;</i></span><span class="s1"> {</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>const</i></span><span class="s2"> card </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">`${</span><span class="s9"><i>category</i></span><span class="s5">}Card`</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>const</i></span><span class="s2"> itemsList </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">`${</span><span class="s9"><i>category</i></span><span class="s5">}Items`</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span></span><span class="s7"><i>const</i></span><span class="s2"> progress </span><span class="s4">=</span><span class="s2"> document.</span><span class="s3">getElementById</span><span class="s2">(</span><span class="s5">`${</span><span class="s9"><i>category</i></span><span class="s5">}Progress`</span><span class="s2">);</span></p>
+<p class="p5"><span class="s2"><span class="Apple-converted-space">                </span></span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>card.classList.</span><span class="s3">remove</span><span class="s2">(</span><span class="s5">'show'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>itemsList.innerHTML </span><span class="s4">=</span><span class="s2"> </span><span class="s5">''</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">                </span>progress.style.width </span><span class="s4">=</span><span class="s2"> </span><span class="s5">'0%'</span><span class="s2">;</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p5"><span class="s8"></span><br></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span></span><span class="s7"><i>function</i></span><span class="s2"> </span><span class="s3">exportReport</span><span class="s2">() {</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">            </span></span><span class="s7">alert</span><span class="s1">(</span><span class="s2">'Report export feature coming soon! Your analysis report will be available for download.'</span><span class="s1">);</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">    </span>&lt;/</span><span class="s4">script</span><span class="s2">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/</span><span class="s2">body</span><span class="s1">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/</span><span class="s2">html</span><span class="s1">&gt;</span></p>
+<p class="p5"><span class="s8"></span><br></p>
 </body>
 </html>
-
